@@ -5,16 +5,42 @@ class App extends Component{
   constructor(){
     super();
     this.state={
-      name:'siwema',
-      age:20,
-      organisation:'Jriit',
+      monsters:[
+        {
+          id:'1',
+          name:'Linda',
+        },
+
+        {
+          id:'2',
+          name:'Frank',
+        },
+
+        {
+          id:'3',
+          name:'Jack',
+        },
+
+
+      ]
     }
   }
+
 
   render(){
     return(
       <div>
-        <p>Hello my name is {this.state.name} i'am {this.state.age} years old and i work at {this.state.organisation}</p>
+
+        {
+          this.state.monsters.map((monster)=>{
+            return(
+              <div key={monster.id}>
+                <h1>{monster.name}</h1>
+              </div>
+            )
+          })
+        }
+        
         
         </div>
     )
